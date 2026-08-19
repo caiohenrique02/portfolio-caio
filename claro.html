@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Caio Henrique | Sites, Sistemas e Automações</title>
-<meta name="description" content="Desenvolvedor de sites, sistemas sob medida e automações. Projetos reais no ar: Barbearia Yank, Dr. Túlio Leandro, MotoMania e Lavô Campina Grande.">
-<meta name="theme-color" content="#05070d">
+<title>Caio Henrique | Sites, Sistemas e Automações — versão clara</title>
+<meta name="description" content="Desenvolvedor de sites, sistemas sob medida e automações em Campina Grande. Projetos em produção: Barbearia Yank, Dr. Túlio Leandro, MotoMania e Lavô Campina Grande.">
+<meta name="theme-color" content="#eef3fb">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Caio Henrique | Sites, Sistemas e Automações">
@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles-light.css">
 </head>
 <body>
 
@@ -35,14 +35,14 @@
     <span class="brand-text">Caio Henrique</span>
   </a>
   <nav class="nav-links">
-    <a href="#servicos">Serviços</a>
+    <a href="#atuacao">Atuação</a>
     <a href="#projetos">Projetos</a>
-    <a href="#processo">Processo</a>
+    <a href="#metodo">Método</a>
     <a href="#contato">Contato</a>
   </nav>
   <div class="ver-switch" role="group" aria-label="Versão do layout">
-    <a href="index.html" aria-current="page">Escuro</a>
-    <a href="claro.html">Claro</a>
+    <a href="index.html">Escuro</a>
+    <a href="claro.html" aria-current="page">Claro</a>
   </div>
   <a href="#contato" class="btn btn-sm btn-primary magnetic">Iniciar projeto</a>
   <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span></button>
@@ -87,18 +87,19 @@
     <pre class="term-body" id="termBody"></pre>
   </div>
 
-  <a href="#servicos" class="scroll-hint" aria-label="Rolar">
+  <a href="#atuacao" class="scroll-hint" aria-label="Rolar">
     <span></span>
   </a>
 </section>
 
-<!-- ===== SERVIÇOS ===== -->
-<section class="section" id="servicos">
+<!-- ===== ATUAÇÃO ===== -->
+<section class="section" id="atuacao">
   <div class="section-head reveal">
-    <span class="eyebrow">// serviços</span>
-    <h2>O que eu faço</h2>
-    <p>Trabalho nessas três áreas. Na prática elas quase sempre se misturam: o site puxa dado
-       de um sistema, e o sistema dispara uma automação.</p>
+    <span class="eyebrow">// atuação</span>
+    <h2>Onde eu entro</h2>
+    <p>Atendo empresa que já tem uma operação rodando e precisa que a parte digital acompanhe.
+       Na maioria dos projetos as três frentes abaixo aparecem juntas: o site consulta o
+       sistema, e o sistema dispara a rotina automática.</p>
   </div>
 
   <div class="cards-3">
@@ -106,11 +107,12 @@
       <div class="svc-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg>
       </div>
-      <h3>Sites &amp; Landing Pages</h3>
-      <p>Sites institucionais, landing pages de venda e catálogos de produto. Carregando
-         rápido, bem posicionado no Google e funcionando igual no celular e no computador.</p>
+      <h3>Sites e páginas de venda</h3>
+      <p>Institucional, catálogo de produto ou página de captação. Entrego com domínio
+         apontado, certificado ativo, medição de acesso e a estrutura de SEO já montada.
+         Onde o conteúdo muda com frequência, deixo editável sem depender de mim.</p>
       <ul class="tags">
-        <li>HTML/CSS/JS</li><li>React</li><li>SEO</li><li>Performance</li>
+        <li>HTML/CSS/JS</li><li>React</li><li>SEO técnico</li><li>Performance</li>
       </ul>
     </article>
 
@@ -118,12 +120,12 @@
       <div class="svc-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg>
       </div>
-      <h3>Sistemas sob medida</h3>
-      <p>Painéis de gestão, controle operacional, cadastros, níveis de acesso e relatórios.
-         Construído em cima do processo que a empresa já tem, sem obrigar ninguém a mudar
-         a rotina toda.</p>
+      <h3>Sistemas internos</h3>
+      <p>Painel de gestão com login, perfil de acesso por cargo, cadastro, histórico e
+         relatório. Modelo o banco conversando com quem executa o processo hoje, para o
+         sistema refletir a operação real da empresa e não uma versão idealizada dela.</p>
       <ul class="tags">
-        <li>Supabase</li><li>Postgres</li><li>Node</li><li>Auth &amp; RLS</li>
+        <li>Supabase</li><li>PostgreSQL</li><li>Node</li><li>RLS</li><li>Auditoria</li>
       </ul>
     </article>
 
@@ -131,15 +133,30 @@
       <div class="svc-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg>
       </div>
-      <h3>Automações &amp; Infra</h3>
-      <p>Integração entre sistemas, rotinas que rodam sozinhas, configuração de rede e
-         servidor. O que alguém fazia na mão todo dia passa a acontecer automático, com
-         aviso quando dá algum problema.</p>
+      <h3>Integração e infraestrutura</h3>
+      <p>Ligação entre ferramentas que não conversam, rotinas agendadas, servidor, rede e VPN.
+         Deixo documentado o que roda, onde roda e o que fazer quando falha, para a empresa
+         não ficar refém de uma única pessoa.</p>
       <ul class="tags">
-        <li>APIs</li><li>Docker</li><li>Linux/VPS</li><li>Redes</li>
+        <li>APIs REST</li><li>Docker</li><li>Linux/VPS</li><li>WireGuard</li><li>UniFi</li>
       </ul>
     </article>
   </div>
+
+  <ul class="deliver reveal" data-delay="2">
+    <li>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+      <span><strong>Escopo por escrito</strong>O que entra, o que fica de fora, prazo e valor definidos antes de começar.</span>
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+      <span><strong>Código na sua conta</strong>Repositório, domínio e servidor ficam em nome da empresa, com acesso seu desde o primeiro dia.</span>
+    </li>
+    <li>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 6 9 17l-5-5"/></svg>
+      <span><strong>Contato direto</strong>Você fala comigo, quem escreve o código, sem camada de atendimento no meio.</span>
+    </li>
+  </ul>
 </section>
 
 <!-- ===== PROJETOS ===== -->
@@ -157,7 +174,7 @@
       <div class="proj-visual">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">barbeariayank.com</span></div>
-          <div class="browser-shot" style="--shot:url('assets/shots/yank.jpg'); --c1:#f5a524; --c2:#7c2d12;">
+          <div class="browser-shot" style="--shot:url('assets/shots/yank.jpg'); --c1:#f5a524; --c2:#c2884a;">
             <span class="shot-fallback">Barbearia Yank</span>
           </div>
         </div>
@@ -184,7 +201,7 @@
       <div class="proj-visual">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">curso.drtulioleandro.com.br</span></div>
-          <div class="browser-shot" style="--shot:url('assets/shots/tulio.jpg'); --c1:#38bdf8; --c2:#1e1b4b;">
+          <div class="browser-shot" style="--shot:url('assets/shots/tulio.jpg'); --c1:#38bdf8; --c2:#7ba7d8;">
             <span class="shot-fallback">Dr. Túlio Leandro</span>
           </div>
         </div>
@@ -211,7 +228,7 @@
       <div class="proj-visual">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">motomania.site</span></div>
-          <div class="browser-shot" style="--shot:url('assets/shots/motomania.jpg'); --c1:#ef4444; --c2:#111827;">
+          <div class="browser-shot" style="--shot:url('assets/shots/motomania.jpg'); --c1:#ef4444; --c2:#9aa8bd;">
             <span class="shot-fallback">MotoMania CG</span>
           </div>
         </div>
@@ -238,7 +255,7 @@
       <div class="proj-visual">
         <div class="browser">
           <div class="browser-bar"><i></i><i></i><i></i><span class="url">lavocampinagrande.com</span></div>
-          <div class="browser-shot" style="--shot:url('assets/shots/lavo.jpg'); --c1:#22d3ee; --c2:#0c4a6e;">
+          <div class="browser-shot" style="--shot:url('assets/shots/lavo.jpg'); --c1:#22d3ee; --c2:#8ec3dd;">
             <span class="shot-fallback">Lavô Campina Grande</span>
           </div>
         </div>
@@ -283,34 +300,43 @@
   </div>
 </section>
 
-<!-- ===== PROCESSO ===== -->
-<section class="section" id="processo">
+<!-- ===== MÉTODO ===== -->
+<section class="section" id="metodo">
   <div class="section-head reveal">
-    <span class="eyebrow">// como funciona</span>
-    <h2>Como a gente trabalha</h2>
-    <p>Sem mistério. Você acompanha cada etapa e sabe o que está sendo feito.</p>
+    <span class="eyebrow">// método</span>
+    <h2>Como conduzo um projeto</h2>
+    <p>Cada etapa termina com algo concreto que você recebe e aprova antes da seguinte
+       começar. Assim ninguém descobre no fim que entendeu o pedido de outro jeito.</p>
   </div>
 
   <ol class="steps">
     <li class="step reveal" data-delay="1">
       <span class="step-n">01</span>
-      <h3>Conversa</h3>
-      <p>A gente conversa sobre o negócio e sobre o que você precisa resolver. Dessa conversa sai o escopo e o prazo.</p>
+      <h3>Diagnóstico</h3>
+      <p>Levanto como o processo funciona hoje, quem usa e onde trava. Fecho escopo, prazo e
+         valor antes de escrever a primeira linha de código.</p>
+      <span class="step-out">entrega: proposta escrita</span>
     </li>
     <li class="step reveal" data-delay="2">
       <span class="step-n">02</span>
-      <h3>Projeto</h3>
-      <p>Defino a estrutura, o layout e como tudo vai funcionar por dentro. Só começo a codar depois que você aprova.</p>
+      <h3>Arquitetura</h3>
+      <p>Defino telas, modelo de dados e as integrações necessárias. Você aprova a estrutura
+         enquanto mudar de ideia ainda é barato.</p>
+      <span class="step-out">entrega: layout e modelo de dados</span>
     </li>
     <li class="step reveal" data-delay="3">
       <span class="step-n">03</span>
-      <h3>Desenvolvimento</h3>
-      <p>Vou construindo por partes e te mando um link de preview. Assim você pede ajuste no meio do caminho, quando ainda é fácil mudar.</p>
+      <h3>Entregas parciais</h3>
+      <p>Publico cada bloco pronto num ambiente de teste com link próprio. Você usa com dado
+         real e pede ajuste no meio do caminho.</p>
+      <span class="step-out">entrega: link de preview</span>
     </li>
     <li class="step reveal" data-delay="4">
       <span class="step-n">04</span>
-      <h3>No ar &amp; suporte</h3>
-      <p>Cuido do domínio, do servidor, do certificado e do monitoramento. Entrego funcionando e continuo disponível depois.</p>
+      <h3>Produção e manutenção</h3>
+      <p>Subo com domínio, certificado, backup e monitoramento configurados. Depois da entrega
+         sigo responsável pelo que está no ar.</p>
+      <span class="step-out">entrega: sistema no ar + acessos</span>
     </li>
   </ol>
 </section>
@@ -320,9 +346,9 @@
   <div class="cta-box reveal">
     <div class="cta-glow" aria-hidden="true"></div>
     <span class="eyebrow">// contato</span>
-    <h2>Tem um projeto em mente?</h2>
-    <p>Me manda uma mensagem contando o que você precisa. Eu respondo com uma ideia de
-       escopo, prazo e valor, sem compromisso nenhum.</p>
+    <h2>Vamos falar sobre o seu projeto</h2>
+    <p>Me conta o que precisa resolver e como isso funciona na sua empresa hoje. Eu volto com
+       escopo, prazo e valor por escrito, sem custo e sem compromisso.</p>
     <div class="cta-actions">
       <!-- TROQUE o número abaixo pelo seu WhatsApp real (formato 55DDNUMERO) -->
       <a class="btn btn-primary btn-lg magnetic"
@@ -346,14 +372,14 @@
   <div class="footer-inner">
     <div>
       <span class="brand-mark">CH</span>
-      <p>Caio Henrique · Sites, sistemas e automações.</p>
+      <p>Caio Henrique · Desenvolvimento web, sistemas e infraestrutura.</p>
     </div>
     <nav>
-      <a href="#servicos">Serviços</a>
+      <a href="#atuacao">Atuação</a>
       <a href="#projetos">Projetos</a>
-      <a href="#processo">Processo</a>
+      <a href="#metodo">Método</a>
       <a href="#contato">Contato</a>
-      <a href="claro.html">Versão clara</a>
+      <a href="index.html">Versão escura</a>
     </nav>
     <small>© <span id="year">2026</span> Caio Henrique. Todos os direitos reservados.</small>
   </div>

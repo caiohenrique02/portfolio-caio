@@ -18,6 +18,17 @@
     let w, h, dpr, nodes = [], raf;
     const mouse = { x: -9999, y: -9999 };
 
+    // cores vêm do CSS, então a mesma rede serve para o tema escuro e o claro
+    const cs = getComputedStyle(document.documentElement);
+    const rgb = (name, fb) => (cs.getPropertyValue(name).trim() || fb);
+    const NET = {
+      line:   rgb('--net-line',   '90,150,220'),
+      dot:    rgb('--net-dot',    '150,180,220'),
+      hot:    rgb('--net-hot',    '124,92,255'),
+      cursor: rgb('--net-cursor', '34,211,238'),
+      a:      parseFloat(rgb('--net-alpha', '1')) || 1
+    };
+
     function resize() {
       dpr = Math.min(window.devicePixelRatio || 1, 2);
       w = cv.width  = innerWidth  * dpr;
@@ -55,7 +66,7 @@
           const d = Math.hypot(dx, dy);
           if (d < link) {
             const t = 1 - d / link;
-            ctx.strokeStyle = `rgba(90,150,220,${t * .22})`;
+            ctx.strokeStyle = `rgba(${NET.line},${t * .22 * NET.a})`;
             ctx.lineWidth = dpr * .55;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
@@ -66,12 +77,14 @@
         const md = Math.hypot(mdx, mdy);
         if (md < mRad) {
           const t = 1 - md / mRad;
-          ctx.strokeStyle = `rgba(34,211,238,${t * .5})`;
+          ctx.strokeStyle = `rgba(${NET.cursor},${t * .5 * NET.a})`;
           ctx.lineWidth = dpr * .8;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
         }
-        ctx.fillStyle = md < mRad ? 'rgba(124,92,255,.85)' : 'rgba(150,180,220,.42)';
+        ctx.fillStyle = md < mRad
+          ? `rgba(${NET.hot},${.85})`
+          : `rgba(${NET.dot},${.42 * NET.a})`;
         ctx.beginPath();
         ctx.arc(a.x, a.y, a.r, 0, Math.PI * 2);
         ctx.fill();
