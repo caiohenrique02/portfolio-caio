@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caio Henrique | Sites, Sistemas e Automações</title>
+<meta name="description" content="Desenvolvedor de sites, sistemas sob medida e automações. Projetos reais no ar: Barbearia Yank, Dr. Túlio Leandro, MotoMania e Lavô Campina Grande.">
+<meta name="theme-color" content="#05070d">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Caio Henrique | Sites, Sistemas e Automações">
+<meta property="og:description" content="Desenvolvedor em Campina Grande. Faço sites, sistemas de gestão e automações, com projetos rodando em produção.">
+<meta property="og:image" content="assets/og.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ===== fundo animado ===== -->
+<canvas id="bg-net" aria-hidden="true"></canvas>
+<div class="grid-overlay" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+
+<!-- ===== barra de progresso ===== -->
+<div class="scroll-progress"><span id="progressBar"></span></div>
+
+<!-- ===== nav ===== -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand">
+    <span class="brand-mark">CH</span>
+    <span class="brand-text">Caio Henrique</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#servicos">Serviços</a>
+    <a href="#projetos">Projetos</a>
+    <a href="#processo">Processo</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <a href="#contato" class="btn btn-sm btn-primary magnetic">Iniciar projeto</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Abrir menu"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="status reveal">
+      <span class="dot"></span> Disponível para novos projetos
+    </div>
+
+    <h1 class="hero-title reveal" data-delay="1">
+      <span class="line">Eu desenvolvo</span>
+      <span class="line grad" id="rotator">
+        <span class="rot-word">sites</span><span class="caret"></span>
+      </span>
+      <span class="line">pro seu negócio.</span>
+    </h1>
+
+    <p class="hero-sub reveal" data-delay="2">
+      Trabalho com <strong>sites</strong>, <strong>sistemas</strong> e <strong>automações</strong>.
+      Faço o projeto, escrevo o código, coloco no ar e continuo cuidando depois que entra em
+      produção.
+    </p>
+
+    <div class="hero-cta reveal" data-delay="3">
+      <a href="#contato" class="btn btn-primary magnetic">
+        Falar no WhatsApp
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#projetos" class="btn btn-ghost magnetic">Ver projetos no ar</a>
+    </div>
+
+  </div>
+
+  <!-- terminal decorativo -->
+  <div class="hero-terminal reveal" data-delay="3" aria-hidden="true">
+    <div class="term-bar"><i></i><i></i><i></i><span>deploy.sh</span></div>
+    <pre class="term-body" id="termBody"></pre>
+  </div>
+
+  <a href="#servicos" class="scroll-hint" aria-label="Rolar">
+    <span></span>
+  </a>
+</section>
+
+<!-- ===== SERVIÇOS ===== -->
+<section class="section" id="servicos">
+  <div class="section-head reveal">
+    <span class="eyebrow">// serviços</span>
+    <h2>O que eu faço</h2>
+    <p>Trabalho nessas três áreas. Na prática elas quase sempre se misturam: o site puxa dado
+       de um sistema, e o sistema dispara uma automação.</p>
+  </div>
+
+  <div class="cards-3">
+    <article class="svc-card reveal tilt" data-delay="1">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 9h20M6 6.5h.01M9 6.5h.01"/></svg>
+      </div>
+      <h3>Sites &amp; Landing Pages</h3>
+      <p>Sites institucionais, landing pages de venda e catálogos de produto. Carregando
+         rápido, bem posicionado no Google e funcionando igual no celular e no computador.</p>
+      <ul class="tags">
+        <li>HTML/CSS/JS</li><li>React</li><li>SEO</li><li>Performance</li>
+      </ul>
+    </article>
+
+    <article class="svc-card reveal tilt" data-delay="2">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 6h16M4 12h16M4 18h10"/><circle cx="19" cy="18" r="2"/></svg>
+      </div>
+      <h3>Sistemas sob medida</h3>
+      <p>Painéis de gestão, controle operacional, cadastros, níveis de acesso e relatórios.
+         Construído em cima do processo que a empresa já tem, sem obrigar ninguém a mudar
+         a rotina toda.</p>
+      <ul class="tags">
+        <li>Supabase</li><li>Postgres</li><li>Node</li><li>Auth &amp; RLS</li>
+      </ul>
+    </article>
+
+    <article class="svc-card reveal tilt" data-delay="3">
+      <div class="svc-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <h3>Automações &amp; Infra</h3>
+      <p>Integração entre sistemas, rotinas que rodam sozinhas, configuração de rede e
+         servidor. O que alguém fazia na mão todo dia passa a acontecer automático, com
+         aviso quando dá algum problema.</p>
+      <ul class="tags">
+        <li>APIs</li><li>Docker</li><li>Linux/VPS</li><li>Redes</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- ===== PROJETOS ===== -->
+<section class="section" id="projetos">
+  <div class="section-head reveal">
+    <span class="eyebrow">// portfólio</span>
+    <h2>Projetos no ar agora</h2>
+    <p>Todos com domínio próprio e em produção. Clique para abrir e conferir ao vivo.</p>
+  </div>
+
+  <div class="projects">
+
+    <!-- 01 -->
+    <article class="proj reveal" data-delay="1">
+      <div class="proj-visual">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">barbeariayank.com</span></div>
+          <div class="browser-shot" style="--shot:url('assets/shots/yank.jpg'); --c1:#f5a524; --c2:#7c2d12;">
+            <span class="shot-fallback">Barbearia Yank</span>
+          </div>
+        </div>
+      </div>
+      <div class="proj-info">
+        <span class="proj-num">01</span>
+        <h3>Barbearia Yank</h3>
+        <span class="proj-type">Site + Infraestrutura de rede</span>
+        <p>Landing page da barbearia integrada a um sistema de hotspot Wi-Fi multi-unidade:
+           captive portal próprio, autenticação de clientes, controle por SSID e conformidade
+           com o Marco Civil. Rede, VPN e servidor mantidos por mim.</p>
+        <ul class="tags">
+          <li>Landing Page</li><li>Captive Portal</li><li>UniFi</li><li>VPN</li><li>VPS Linux</li>
+        </ul>
+        <a class="proj-link magnetic" href="https://barbeariayank.com" target="_blank" rel="noopener">
+          Visitar site
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 02 -->
+    <article class="proj reveal" data-delay="1">
+      <div class="proj-visual">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">curso.drtulioleandro.com.br</span></div>
+          <div class="browser-shot" style="--shot:url('assets/shots/tulio.jpg'); --c1:#38bdf8; --c2:#1e1b4b;">
+            <span class="shot-fallback">Dr. Túlio Leandro</span>
+          </div>
+        </div>
+      </div>
+      <div class="proj-info">
+        <span class="proj-num">02</span>
+        <h3>Dr. Túlio Leandro</h3>
+        <span class="proj-type">Landing page de vendas</span>
+        <p>Página de captação e venda do curso do Dr. Túlio, com vídeo de apresentação (VSL),
+           quebra de objeções, prova social e checkout integrado à Hotmart. Tipografia editorial
+           e estrutura pensada para conversão.</p>
+        <ul class="tags">
+          <li>Landing Page</li><li>VSL</li><li>Hotmart</li><li>Copy &amp; Conversão</li><li>SEO</li>
+        </ul>
+        <a class="proj-link magnetic" href="https://curso.drtulioleandro.com.br" target="_blank" rel="noopener">
+          Visitar site
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 03 -->
+    <article class="proj reveal" data-delay="1">
+      <div class="proj-visual">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">motomania.site</span></div>
+          <div class="browser-shot" style="--shot:url('assets/shots/motomania.jpg'); --c1:#ef4444; --c2:#111827;">
+            <span class="shot-fallback">MotoMania CG</span>
+          </div>
+        </div>
+      </div>
+      <div class="proj-info">
+        <span class="proj-num">03</span>
+        <h3>Moto Mania CG</h3>
+        <span class="proj-type">Catálogo multi-unidade</span>
+        <p>Vitrine digital de motos e bikes elétricas com catálogo completo, página de detalhe
+           por modelo e atendimento separado por unidade: cada uma das 5 lojas tem seus
+           próprios vendedores e contato direto no WhatsApp.</p>
+        <ul class="tags">
+          <li>Catálogo</li><li>Multi-unidade</li><li>WhatsApp</li><li>Responsivo</li><li>SEO</li>
+        </ul>
+        <a class="proj-link magnetic" href="https://motomania.site" target="_blank" rel="noopener">
+          Visitar site
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </article>
+
+    <!-- 04 -->
+    <article class="proj reveal" data-delay="1">
+      <div class="proj-visual">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">lavocampinagrande.com</span></div>
+          <div class="browser-shot" style="--shot:url('assets/shots/lavo.jpg'); --c1:#22d3ee; --c2:#0c4a6e;">
+            <span class="shot-fallback">Lavô Campina Grande</span>
+          </div>
+        </div>
+      </div>
+      <div class="proj-info">
+        <span class="proj-num">04</span>
+        <h3>Lavô Campina Grande</h3>
+        <span class="proj-type">Site institucional · lavanderia</span>
+        <p>Site da lavanderia de autoatendimento: explica como funciona, apresenta o espaço,
+           os insumos e os tempos de lavagem e secagem. Ilustrações animadas, visual leve
+           e caminho curto até o contato.</p>
+        <ul class="tags">
+          <li>Site Institucional</li><li>Animações</li><li>WhatsApp</li><li>Mobile-first</li>
+        </ul>
+        <a class="proj-link magnetic" href="https://lavocampinagrande.com" target="_blank" rel="noopener">
+          Visitar site
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== MARQUEE STACK ===== -->
+<section class="marquee-wrap" aria-hidden="true">
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>JavaScript</span><i>◆</i><span>React</span><i>◆</i><span>Node.js</span><i>◆</i>
+      <span>TypeScript</span><i>◆</i><span>Supabase</span><i>◆</i><span>PostgreSQL</span><i>◆</i>
+      <span>Docker</span><i>◆</i><span>Linux</span><i>◆</i><span>Nginx</span><i>◆</i>
+      <span>APIs REST</span><i>◆</i><span>Tailwind</span><i>◆</i><span>Git</span><i>◆</i>
+      <span>Redes &amp; VPN</span><i>◆</i>
+    </div>
+    <div class="marquee-track" aria-hidden="true">
+      <span>JavaScript</span><i>◆</i><span>React</span><i>◆</i><span>Node.js</span><i>◆</i>
+      <span>TypeScript</span><i>◆</i><span>Supabase</span><i>◆</i><span>PostgreSQL</span><i>◆</i>
+      <span>Docker</span><i>◆</i><span>Linux</span><i>◆</i><span>Nginx</span><i>◆</i>
+      <span>APIs REST</span><i>◆</i><span>Tailwind</span><i>◆</i><span>Git</span><i>◆</i>
+      <span>Redes &amp; VPN</span><i>◆</i>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESSO ===== -->
+<section class="section" id="processo">
+  <div class="section-head reveal">
+    <span class="eyebrow">// como funciona</span>
+    <h2>Como a gente trabalha</h2>
+    <p>Sem mistério. Você acompanha cada etapa e sabe o que está sendo feito.</p>
+  </div>
+
+  <ol class="steps">
+    <li class="step reveal" data-delay="1">
+      <span class="step-n">01</span>
+      <h3>Conversa</h3>
+      <p>A gente conversa sobre o negócio e sobre o que você precisa resolver. Dessa conversa sai o escopo e o prazo.</p>
+    </li>
+    <li class="step reveal" data-delay="2">
+      <span class="step-n">02</span>
+      <h3>Projeto</h3>
+      <p>Defino a estrutura, o layout e como tudo vai funcionar por dentro. Só começo a codar depois que você aprova.</p>
+    </li>
+    <li class="step reveal" data-delay="3">
+      <span class="step-n">03</span>
+      <h3>Desenvolvimento</h3>
+      <p>Vou construindo por partes e te mando um link de preview. Assim você pede ajuste no meio do caminho, quando ainda é fácil mudar.</p>
+    </li>
+    <li class="step reveal" data-delay="4">
+      <span class="step-n">04</span>
+      <h3>No ar &amp; suporte</h3>
+      <p>Cuido do domínio, do servidor, do certificado e do monitoramento. Entrego funcionando e continuo disponível depois.</p>
+    </li>
+  </ol>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section class="section contato" id="contato">
+  <div class="cta-box reveal">
+    <div class="cta-glow" aria-hidden="true"></div>
+    <span class="eyebrow">// contato</span>
+    <h2>Tem um projeto em mente?</h2>
+    <p>Me manda uma mensagem contando o que você precisa. Eu respondo com uma ideia de
+       escopo, prazo e valor, sem compromisso nenhum.</p>
+    <div class="cta-actions">
+      <!-- TROQUE o número abaixo pelo seu WhatsApp real (formato 55DDNUMERO) -->
+      <a class="btn btn-primary btn-lg magnetic"
+         href="https://wa.me/5583900000000?text=Ol%C3%A1%20Caio!%20Vim%20pelo%20seu%20portf%C3%B3lio%20e%20quero%20falar%20sobre%20um%20projeto."
+         target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2m0 1.67c2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.82c0 4.54-3.7 8.24-8.25 8.24a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24m-2.4 4.16c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.34.99 2.5c.12.16 1.7 2.6 4.12 3.64.58.25 1.03.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.05.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.19-.46-.39-.4-.54-.41h-.46"/></svg>
+        Chamar no WhatsApp
+      </a>
+      <a class="btn btn-ghost btn-lg magnetic" href="mailto:caiohenriqueramosm@gmail.com?subject=Projeto%20-%20contato%20pelo%20portf%C3%B3lio">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        Enviar e-mail
+      </a>
+    </div>
+    <p class="cta-foot">caiohenriqueramosm@gmail.com · Campina Grande, PB · atendo remoto para todo o Brasil</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <span class="brand-mark">CH</span>
+      <p>Caio Henrique · Sites, sistemas e automações.</p>
+    </div>
+    <nav>
+      <a href="#servicos">Serviços</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Processo</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <small>© <span id="year">2026</span> Caio Henrique. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
