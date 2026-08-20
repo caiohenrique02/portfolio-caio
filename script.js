@@ -18,7 +18,7 @@
     let w, h, dpr, nodes = [], raf;
     const mouse = { x: -9999, y: -9999 };
 
-    // cores vêm do CSS, então a mesma rede serve para o tema escuro e o claro
+    // cores vêm do CSS (--net-line, --net-dot, --net-hot, --net-cursor, --net-alpha)
     const cs = getComputedStyle(document.documentElement);
     const rgb = (name, fb) => (cs.getPropertyValue(name).trim() || fb);
     const NET = {

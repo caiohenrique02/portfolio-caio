@@ -1,43 +1,59 @@
 # Portfólio — Caio Henrique
 
-Site estático (HTML/CSS/JS puro, zero build), em duas versões que dividem o mesmo conteúdo,
-os mesmos elementos gráficos e o mesmo `script.js`:
+Site estático (HTML/CSS/JS puro, zero build), uma única versão em tom claro:
 
-| Versão | Arquivo | CSS | Tom |
-|---|---|---|---|
-| v1 escura | `index.html` | `styles.css` | fundo quase preto, acento ciano/violeta |
-| v2 clara | `claro.html` | `styles-light.css` | fundo branco levemente azulado, superfícies translúcidas |
+| Arquivo | O que é |
+|---|---|
+| `index.html` | a página inteira |
+| `styles.css` | estilos (fundo branco levemente azulado, superfícies translúcidas) |
+| `script.js` | rede de partículas do fundo, reveal ao rolar, tilt dos cards, rotator do hero |
 
-O seletor **Escuro / Claro** fica na nav das duas páginas (e também no rodapé), então dá para
-alternar clicando e ver uma de cada vez.
-
-Hero e seção de projetos são iguais nas duas, mudando só o tom. Na v2 o restante do texto foi
-reescrito: `Atuação` no lugar de `Serviços`, `Método` no lugar de `Processo`, com o que é
-entregue em cada etapa explicitado.
+A versão escura (`claro.html` / `styles-light.css` eram o par da clara) foi retirada em
+20/08/2026. O código dela continua no histórico do git, no commit `21bc299`.
 
 ## Rodar local
 
 ```bash
 cd ~/portfolio-caio
 python3 -m http.server 8080
-# http://localhost:8080          → versão escura
-# http://localhost:8080/claro.html → versão clara
+# http://localhost:8080
 ```
 
-(Abrir os HTML direto no navegador também funciona.)
+(Abrir o HTML direto no navegador também funciona.)
 
 ## O que trocar
 
 | O quê | Onde |
 |---|---|
-| Número do WhatsApp | `index.html` e `claro.html` → busque por `wa.me/5583900000000` |
-| E-mail | `index.html` / `claro.html` → `caiohenriqueramosm@gmail.com` |
-| Textos dos projetos | seção `<!-- ===== PROJETOS ===== -->` nos dois arquivos |
-| Cores da v1 | `styles.css` → bloco `:root` |
-| Cores da v2 | `styles-light.css` → bloco `:root` |
+| Número do WhatsApp | `index.html` → busque por `wa.me/5583900000000` |
+| E-mail | `index.html` → `caiohenriqueramosm@gmail.com` |
+| Textos dos projetos | seção `<!-- ===== PROJETOS ===== -->` |
+| Cores | `styles.css` → bloco `:root` |
 
 As cores da rede de partículas do fundo saem do CSS (`--net-line`, `--net-dot`, `--net-hot`,
-`--net-cursor`, `--net-alpha`), por isso o mesmo `script.js` serve para as duas versões.
+`--net-cursor`, `--net-alpha`).
+
+## Ilustrações
+
+Os três cards de **Atuação** e as quatro etapas de **Método** têm uma ilustração em SVG inline,
+escrita à mão no próprio `index.html` (sem biblioteca, sem imagem externa):
+
+| Card | Cena |
+|---|---|
+| Sites e páginas de venda | janela de navegador com hero e botão de ação + celular ao lado |
+| Sistemas internos | painel com menu, indicadores, tabela, gráfico de barras e cadeado |
+| Integração e infraestrutura | servidor central ligado a quatro sistemas, com pacotes correndo nos cabos e um relógio de rotina agendada |
+| 01 Diagnóstico | três etapas do processo com setas, lupa passando por cima e um alerta onde ele trava |
+| 02 Arquitetura | tela em wireframe ligada a duas tabelas do banco, com a relação entre elas |
+| 03 Entregas parciais | ambiente de teste com link próprio, blocos publicados, um pendente e barra de progresso |
+| 04 Produção e manutenção | linha de monitoramento batendo, servidor no ar e domínio com certificado |
+
+As animações (linhas crescendo, barras subindo, pacotes nos cabos, lupa varrendo o processo)
+ficam no `styles.css` sob `/* ---- ilustrações dos cards ---- */` e só disparam quando o card
+entra na tela, via a classe `.in` que o `script.js` adiciona. Quem usa `prefers-reduced-motion` vê tudo parado no estado
+final. As formas são coordenadas de um `viewBox` (320×140 nos cards de Atuação, 200×110 nas etapas) —
+para mexer, edite os `x/y/width` direto no SVG. As classes (`a-panel`, `a-fill`, `a-grad`,
+`a-wire`, `a-pulse`…) são compartilhadas pelas sete ilustrações.
 
 ## Screenshots dos projetos
 
@@ -57,5 +73,4 @@ Se algum arquivo faltar, o card cai automaticamente num gradiente com o nome do 
 ## Deploy
 
 Por ser estático, sobe em qualquer lugar: Hostinger (upload da pasta via FTP/File Manager),
-Vercel, Netlify, GitHub Pages ou EasyPanel com um Nginx simples. Suba a pasta inteira para as
-duas versões continuarem acessíveis.
+Vercel, Netlify, GitHub Pages ou EasyPanel com um Nginx simples.
