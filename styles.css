@@ -581,11 +581,53 @@ main, .nav, .footer{ position:relative; z-index:2 }
 .reveal[data-delay="4"]{ transition-delay:.36s }
 
 /* =========================================================
+   RETRATO NA HERO
+   ========================================================= */
+.portrait{
+  position:relative; margin:0; justify-self:end;
+  width:min(100%,400px); border-radius:28px; overflow:hidden;
+  background:#0c121d;
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 50px 90px -45px rgba(16,29,51,.7), 0 1px 0 rgba(255,255,255,.85) inset;
+  animation:float 7s ease-in-out infinite;
+}
+.portrait::before{
+  content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(180deg, rgba(255,255,255,.14), transparent 34%),
+             linear-gradient(180deg, transparent 62%, rgba(12,18,29,.55));
+}
+.portrait::after{
+  content:''; position:absolute; top:0; left:0; right:0; height:2px; z-index:2;
+  background:var(--grad); opacity:.9;
+}
+.portrait img{
+  display:block; width:100%; height:auto;
+  filter:saturate(.96) contrast(1.03);
+  transition:transform 1.2s var(--ease), filter .6s var(--ease);
+}
+.portrait:hover img{ transform:scale(1.035); filter:saturate(1.05) contrast(1.03) }
+.portrait-chip{
+  position:absolute; left:18px; bottom:18px; z-index:3;
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 14px; border-radius:99px;
+  background:rgba(255,255,255,.13); backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.3);
+  font-family:var(--ff-mono); font-size:11.5px; letter-spacing:.05em; color:#f2f6ff;
+}
+.hero::after{
+  content:''; position:absolute; z-index:-1; right:2%; top:16%;
+  width:min(46vw,520px); aspect-ratio:1; border-radius:50%;
+  background:radial-gradient(circle, rgba(79,70,229,.16), transparent 66%);
+  filter:blur(10px); pointer-events:none;
+}
+
+/* =========================================================
    RESPONSIVO
    ========================================================= */
 @media (max-width:980px){
   .hero{ grid-template-columns:1fr; padding-top:126px; padding-bottom:80px; min-height:auto }
-  .hero-terminal{ display:none }
+  .portrait{ justify-self:start; width:min(100%,268px); margin-top:34px }
+  .hero::after{ display:none }
   .proj{ grid-template-columns:1fr; gap:28px }
   .proj:nth-child(even) .proj-visual{ order:0 }
   .browser, .proj:nth-child(even) .browser{ transform:none }
