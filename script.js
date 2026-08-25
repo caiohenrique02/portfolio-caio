@@ -186,51 +186,7 @@
   }
 
   /* ---------------------------------------------------
-     6. Terminal decorativo do hero
-     --------------------------------------------------- */
-  function initTerminal() {
-    const el = $('#termBody');
-    if (!el) return;
-    const lines = [
-      '<span class="d">$</span> <span class="c">caio</span> deploy site',
-      '<span class="d">→</span> build .................. <span class="g">ok</span>',
-      '<span class="d">→</span> imagens otimizadas ..... <span class="g">ok</span>',
-      '<span class="d">→</span> certificado SSL ........ <span class="g">ok</span>',
-      '<span class="d">→</span> domínio apontado ....... <span class="g">ok</span>',
-      '',
-      '<span class="g">✓</span> site no ar',
-      '',
-      '<span class="d">$</span> <span class="c">caio</span> status',
-      '<span class="d">→</span> integrações ............ <span class="g">rodando</span>',
-      '<span class="d">→</span> backup diário .......... <span class="g">ativo</span>',
-      '<span class="d">→</span> monitoramento .......... <span class="g">ativo</span>',
-      '',
-      '<span class="d">$</span> <span class="caret-t">_</span>'
-    ];
-
-    if (reduced) { el.innerHTML = lines.join('\n'); return; }
-
-    let li = 0, ci = 0, buf = '';
-    (function type() {
-      if (li >= lines.length) return;
-      const raw = lines[li];
-      // digita ignorando as tags html (escreve a linha inteira de uma vez a cada "n" chars)
-      const plain = raw.replace(/<[^>]+>/g, '');
-      ci += 2;
-      if (ci >= plain.length) {
-        buf += raw + '\n';
-        el.innerHTML = buf;
-        li++; ci = 0;
-        setTimeout(type, raw === '' ? 120 : 210);
-      } else {
-        el.innerHTML = buf + plain.slice(0, ci);
-        setTimeout(type, 16);
-      }
-    })();
-  }
-
-  /* ---------------------------------------------------
-     7. Botões magnéticos
+     6. Botões magnéticos
      --------------------------------------------------- */
   function initMagnetic() {
     if (reduced || matchMedia('(pointer: coarse)').matches) return;
@@ -246,7 +202,7 @@
   }
 
   /* ---------------------------------------------------
-     8. Tilt 3D + spotlight nos cards de serviço
+     7. Tilt 3D + spotlight nos cards de serviço
      --------------------------------------------------- */
   function initTilt() {
     $$('.tilt').forEach(card => {
@@ -265,7 +221,7 @@
   }
 
   /* ---------------------------------------------------
-     9. Screenshots dos projetos (fallback se a imagem não existir)
+     8. Screenshots dos projetos (fallback se a imagem não existir)
      --------------------------------------------------- */
   function initShots() {
     $$('.browser-shot').forEach(shot => {
@@ -280,7 +236,7 @@
   }
 
   /* ---------------------------------------------------
-     10. Parallax leve na grade do fundo
+     9. Parallax leve na grade do fundo
      --------------------------------------------------- */
   function initParallax() {
     const grid = $('.grid-overlay');
@@ -306,7 +262,6 @@
     initNav();
     initReveal();
     initRotator();
-    initTerminal();
     initMagnetic();
     initTilt();
     initShots();
