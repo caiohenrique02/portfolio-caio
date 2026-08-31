@@ -230,10 +230,14 @@
   }
 
   /* ---------------------------------------------------
-     8. Screenshots dos projetos (fallback se a imagem não existir)
+     8. Screenshots dos projetos (lazy: só baixa perto da tela;
+        fallback se a imagem não existir)
      --------------------------------------------------- */
   function initShots() {
-    $$('.browser-shot').forEach(shot => {
+    const shots = $$('.browser-shot');
+    if (!shots.length) return;
+
+    function carregar(shot) {
       const raw = getComputedStyle(shot).getPropertyValue('--shot').trim();
       const m = raw.match(/url\(["']?(.+?)["']?\)/);
       if (!m) return;
@@ -241,7 +245,22 @@
       img.onload = () => shot.classList.add('has-shot');
       img.onerror = () => {};   // mantém o gradiente + nome do projeto
       img.src = m[1];
-    });
+      shot.classList.add('in-view'); // libera o background-image no CSS
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      shots.forEach(carregar); // fallback pra navegador muito antigo
+      return;
+    }
+
+    const io = new IntersectionObserver((entries, obs) => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        carregar(en.target);
+        obs.unobserve(en.target);
+      });
+    }, { rootMargin: '600px 0px' }); // começa a baixar um pouco antes de entrar na tela
+    shots.forEach(el => io.observe(el));
   }
 
   /* ---------------------------------------------------

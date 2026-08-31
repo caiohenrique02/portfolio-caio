@@ -417,11 +417,14 @@ main, .nav, .footer{ position:relative; z-index:2 }
 .browser-shot{
   position:relative; aspect-ratio:16/10;
   display:grid; place-items:center;
-  background-image:var(--shot);
   background-size:cover; background-position:top center;
   background-color:#eaf1fb;
   transition:transform 1s var(--ease);
 }
+/* A imagem real (--shot) só entra quando o card fica perto da tela (ver
+   initShots em script.js) - ate la o card mostra so o gradiente de fundo,
+   evitando baixar as 4 fotos de projeto inteiras no carregamento inicial. */
+.browser-shot.in-view{ background-image:var(--shot) }
 .browser-shot::before{
   content:''; position:absolute; inset:0; z-index:0; transition:opacity .5s var(--ease);
   background:
