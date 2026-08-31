@@ -36,8 +36,8 @@
       cv.style.width = innerWidth + 'px';
       cv.style.height = innerHeight + 'px';
 
-      const target = Math.round((innerWidth * innerHeight) / 19000);
-      const count = Math.max(28, Math.min(96, target));
+      const target = Math.round((innerWidth * innerHeight) / 26000);
+      const count = Math.max(24, Math.min(56, target));
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -132,11 +132,20 @@
     const nav = $('#nav'), bar = $('#progressBar');
     const toggle = $('#navToggle'), links = $('.nav-links');
 
+    let max = document.documentElement.scrollHeight - innerHeight;
+    const recalc = () => { max = document.documentElement.scrollHeight - innerHeight; };
+    addEventListener('resize', recalc, { passive: true });
+
+    let ticking = false;
     const onScroll = () => {
-      const y = scrollY;
-      nav.classList.toggle('scrolled', y > 24);
-      const max = document.documentElement.scrollHeight - innerHeight;
-      bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        const y = scrollY;
+        nav.classList.toggle('scrolled', y > 24);
+        bar.style.width = (max > 0 ? (y / max) * 100 : 0) + '%';
+        ticking = false;
+      });
     };
     addEventListener('scroll', onScroll, { passive: true });
     onScroll();
