@@ -65,6 +65,17 @@ ul,ol{ list-style:none }
 ::-webkit-scrollbar-thumb{ background:#c2d3ee; border-radius:20px; border:2px solid #e8eefa }
 ::-webkit-scrollbar-thumb:hover{ background:#a6bde3 }
 
+/* Pausa TODA animação/transição decorativa enquanto a página rola (classe
+   is-scrolling do initScrollIdle em script.js). Quanto mais seções ficam
+   visíveis, mais animações infinitas (pulso, brilho, ilustrações dos
+   cards, marquee...) rodam ao mesmo tempo - sem isso, cada uma disputa o
+   mesmo frame do scroll e o site fica mais travado quanto mais rola. Some
+   ~150ms depois de parar, imperceptível a olho nu. */
+html.is-scrolling *, html.is-scrolling *::before, html.is-scrolling *::after{
+  animation-play-state:paused !important;
+  transition:none !important;
+}
+
 /* =========================================================
    CAMADAS DE FUNDO
    ========================================================= */
@@ -84,9 +95,6 @@ ul,ol{ list-style:none }
   animation:gridDrift 24s linear infinite;
 }
 @keyframes gridDrift{ to{ background-position:64px 64px, 64px 64px } }
-/* Pausa a animação do grid enquanto a página rola (ver initScrollIdle em
-   script.js) - evita competir com o scroll pelo mesmo frame. */
-html.is-scrolling .grid-overlay{ animation-play-state:paused }
 
 .noise{
   position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.02;
@@ -203,12 +211,18 @@ main, .nav, .footer{ position:relative; z-index:2 }
   font-size:13px; font-family:var(--ff-mono); color:#166534; letter-spacing:.2px;
 }
 .status .dot{
+  position:relative;
   width:7px; height:7px; border-radius:50%; background:#16a34a;
-  box-shadow:0 0 0 0 rgba(22,163,74,.5); animation:pulse 2.2s infinite;
+}
+/* Anel pulsante via transform+opacity (composita na GPU) em vez de animar
+   box-shadow (que força repaint a cada frame, mesmo fora da tela) */
+.status .dot::after{
+  content:''; position:absolute; inset:0; border-radius:50%;
+  background:#16a34a; opacity:.5; animation:pulse 2.2s infinite;
 }
 @keyframes pulse{
-  70%{ box-shadow:0 0 0 9px rgba(22,163,74,0) }
-  100%{ box-shadow:0 0 0 0 rgba(22,163,74,0) }
+  0%{ transform:scale(1); opacity:.5 }
+  100%{ transform:scale(4.5); opacity:0 }
 }
 
 .hero-title{
