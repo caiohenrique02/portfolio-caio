@@ -84,6 +84,9 @@ ul,ol{ list-style:none }
   animation:gridDrift 24s linear infinite;
 }
 @keyframes gridDrift{ to{ background-position:64px 64px, 64px 64px } }
+/* Pausa a animação do grid enquanto a página rola (ver initScrollIdle em
+   script.js) - evita competir com o scroll pelo mesmo frame. */
+html.is-scrolling .grid-overlay{ animation-play-state:paused }
 
 .noise{
   position:fixed; inset:0; z-index:1; pointer-events:none; opacity:.02;

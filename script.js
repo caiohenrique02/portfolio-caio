@@ -9,6 +9,22 @@
   const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
   /* ---------------------------------------------------
+     0. Marca <html class="is-scrolling"> enquanto a página rola, pra
+        outras animações de fundo (canvas de partículas, grid) pausarem
+        e não competir com o scroll pelo mesmo frame.
+     --------------------------------------------------- */
+  function initScrollIdle() {
+    let timer;
+    addEventListener('scroll', () => {
+      document.documentElement.classList.add('is-scrolling');
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        document.documentElement.classList.remove('is-scrolling');
+      }, 150);
+    }, { passive: true });
+  }
+
+  /* ---------------------------------------------------
      1. Rede de partículas no fundo (canvas)
      --------------------------------------------------- */
   function initNetwork() {
@@ -48,6 +64,14 @@
     }
 
     function draw() {
+      // Enquanto a página está rolando, pula o desenho (O(n²) de conexões +
+      // vários stroke/arc por frame) pra não competir com o scroll - retoma
+      // sozinho quando initScrollIdle tirar a classe (~150ms após parar).
+      if (document.documentElement.classList.contains('is-scrolling')) {
+        raf = requestAnimationFrame(draw);
+        return;
+      }
+
       ctx.clearRect(0, 0, w, h);
       const link = 132 * dpr;
       const mRad = 190 * dpr;
@@ -285,6 +309,7 @@
      --------------------------------------------------- */
   function boot() {
     const y = $('#year'); if (y) y.textContent = new Date().getFullYear();
+    initScrollIdle();
     initNetwork();
     initCursorGlow();
     initNav();
