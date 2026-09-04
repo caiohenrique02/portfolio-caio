@@ -406,7 +406,7 @@ main, .nav, .footer{ position:relative; z-index:2 }
 .proj{ display:grid; grid-template-columns:1.1fr .9fr; align-items:center; gap:clamp(32px,5vw,64px) }
 .proj:nth-child(even) .proj-visual{ order:2 }
 
-.proj-visual{ perspective:1400px }
+.proj-visual{ display:block; perspective:1400px; text-decoration:none; cursor:pointer }
 .browser{
   border:1px solid var(--line); border-radius:14px; overflow:hidden;
   background:#fff;
