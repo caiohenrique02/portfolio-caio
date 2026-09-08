@@ -21,20 +21,19 @@ Abrir o `index.html` direto no navegador também funciona.
 
 ## Ilustrações
 
-Os três cards de **Atuação** e as quatro etapas de **Método** têm uma ilustração em SVG inline,
+Os dois cards de **Atuação** e as quatro etapas de **Método** têm uma ilustração em SVG inline,
 escrita à mão no próprio `index.html`, sem biblioteca e sem imagem externa:
 
 | Card | Cena |
 |---|---|
 | Sites e páginas de venda | janela de navegador com hero e botão de ação, celular ao lado |
-| Sistemas internos | painel com menu, indicadores, tabela, gráfico de barras e cadeado |
 | Integração e infraestrutura | servidor central ligado a quatro sistemas, com pacotes correndo nos cabos e um relógio de rotina agendada |
 | 01 Diagnóstico | três etapas do processo com setas, lupa passando por cima e um alerta onde ele trava |
 | 02 Arquitetura | tela em wireframe ligada a duas tabelas do banco, com a relação entre elas |
 | 03 Entregas parciais | ambiente de teste com link próprio, blocos publicados, um pendente e barra de progresso |
 | 04 Produção e manutenção | linha de monitoramento batendo, servidor no ar e domínio com certificado |
 
-As animações (linhas crescendo, barras subindo, pacotes nos cabos, lupa varrendo o processo)
+As animações (linhas crescendo, pacotes nos cabos, lupa varrendo o processo)
 ficam no `styles.css` sob `/* ---- ilustrações dos cards ---- */` e só disparam quando o card
 entra na tela, via a classe `.in` que o `script.js` adiciona. Quem usa `prefers-reduced-motion`
 vê tudo parado no estado final. As formas são coordenadas de um `viewBox` (320×140 nos cards de

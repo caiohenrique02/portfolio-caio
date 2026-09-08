@@ -204,7 +204,7 @@
   function initRotator() {
     const host = $('#rotator .rot-word');
     if (!host) return;
-    const words = ['sites', 'sistemas', 'automações', 'resultados'];
+    const words = ['sites', 'automações', 'resultados'];
     if (reduced) { host.textContent = words[0]; return; }
 
     let i = 0, j = 0, deleting = false;

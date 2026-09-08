@@ -280,7 +280,7 @@ main, .nav, .footer{ position:relative; z-index:2 }
 .section-head p{ color:var(--txt-2); font-size:1.03rem }
 
 /* ---- serviços ---- */
-.cards-3{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px }
+.cards-2{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:22px }
 .svc-card{
   position:relative; padding:32px 28px 28px; border-radius:var(--r-lg);
   background:linear-gradient(165deg, rgba(255,255,255,.9), rgba(255,255,255,.55));
@@ -328,7 +328,6 @@ main, .nav, .footer{ position:relative; z-index:2 }
 /* traços da ilustração */
 .art .a-panel{ fill:rgba(255,255,255,.95); stroke:rgba(37,99,235,.3); stroke-width:1.4 }
 .art .a-line{ fill:none; stroke:rgba(37,99,235,.2); stroke-width:1.4 }
-.art .a-stroke{ fill:none; stroke:var(--cyan); stroke-width:1.8; stroke-linecap:round }
 .art .a-soft{ fill:rgba(59,130,246,.12) }
 .art .a-fill{ fill:rgba(37,99,235,.24) }
 .art .a-dot{ fill:rgba(37,99,235,.3) }
@@ -349,7 +348,6 @@ main, .nav, .footer{ position:relative; z-index:2 }
 .art-ent  .a-grad{ fill:url(#artEnt) }
 .art-prod .a-grad{ fill:url(#artProd) }
 .art-web   .a-grad{ fill:url(#artWeb) }
-.art-sys   .a-grad{ fill:url(#artSys) }
 .art-infra .a-grad{ fill:url(#artInfra) }
 
 /* cabos e pacotes de dados */
@@ -362,16 +360,11 @@ main, .nav, .footer{ position:relative; z-index:2 }
 /* animação — dispara quando o card entra na tela */
 .art rect, .art circle{ transform-box:fill-box }
 .art .l1,.art .l2,.art .l3,.art .l4{ transform-origin:left center; transform:scaleX(0) }
-.art .a-bar{ transform-origin:bottom center; transform:scaleY(.12) }
 
 .in .art .l1{ animation:artGrow .55s var(--ease) .30s forwards }
 .in .art .l2{ animation:artGrow .55s var(--ease) .42s forwards }
 .in .art .l3{ animation:artGrow .55s var(--ease) .54s forwards }
 .in .art .l4{ animation:artGrow .55s var(--ease) .66s forwards }
-.in .art .b1{ animation:artRise .7s var(--ease) .30s forwards }
-.in .art .b2{ animation:artRise .7s var(--ease) .40s forwards }
-.in .art .b3{ animation:artRise .7s var(--ease) .50s forwards }
-.in .art .b4{ animation:artRise .7s var(--ease) .60s forwards }
 .in .art .a-cta{ animation:artBeat 2.6s var(--ease) 1s infinite }
 .in .art .a-cursor{ animation:artNudge 2.6s var(--ease) 1s infinite }
 .in .art .a-pulse{ animation:artFlow 2.4s linear infinite }
@@ -386,7 +379,6 @@ main, .nav, .footer{ position:relative; z-index:2 }
 }
 
 @keyframes artGrow{ from{ transform:scaleX(0) } to{ transform:scaleX(1) } }
-@keyframes artRise{ from{ transform:scaleY(.12) } to{ transform:scaleY(1) } }
 @keyframes artBeat{ 0%,72%,100%{ opacity:1; transform:none } 82%{ opacity:.72; transform:scale(.955) } }
 @keyframes artNudge{ 0%,66%,100%{ transform:none } 80%{ transform:translate(-6px,-7px) } }
 @keyframes artFlow{ from{ stroke-dashoffset:12 } to{ stroke-dashoffset:-92 } }
@@ -656,6 +648,6 @@ main, .nav, .footer{ position:relative; z-index:2 }
   .reveal{ opacity:1; transform:none }
   #bg-net,.cursor-glow{ display:none }
   .art .a-pulse{ display:none }
-  .art .l1,.art .l2,.art .l3,.art .l4,.art .a-bar{ transform:none !important }
+  .art .l1,.art .l2,.art .l3,.art .l4{ transform:none !important }
 }
 :focus-visible{ outline:2px solid var(--cyan); outline-offset:3px; border-radius:4px }
