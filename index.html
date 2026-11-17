@@ -52,6 +52,7 @@
   <nav class="nav-links">
     <a href="#atuacao">Atuação</a>
     <a href="#projetos">Projetos</a>
+    <a href="#experiencia">Experiência</a>
     <a href="#metodo">Método</a>
     <a href="#contato">Contato</a>
   </nav>
@@ -360,6 +361,83 @@
 </section>
 
 <!-- ===== MARQUEE STACK ===== -->
+<!-- ===== EXPERIÊNCIA ===== -->
+<section class="section" id="experiencia">
+  <div class="section-head reveal">
+    <span class="eyebrow">// experiência</span>
+    <h2>O que eu construí na Imago</h2>
+    <p>Sou estagiário de TI na Imago Radiologia, clínica de diagnóstico por imagem com 3 unidades,
+       desde dez/2025. Estes sistemas são internos e trabalham com dados da operação e de
+       pacientes, então não têm demo pública. Aqui está o que cada um faz, com números agregados
+       e sem dado sensível. Detalho em conversa.</p>
+  </div>
+
+  <div class="cards-2">
+
+    <article class="svc-card reveal tilt" data-delay="1">
+      <h3>Sistema de gestão</h3>
+      <p>Evoluo e mantenho, em dupla, o sistema de gestão da clínica: inspeções, impressoras
+         com QR e assinatura HMAC, achados e perdidos, energia e um assistente de IA.
+         <strong>56 versões publicadas</strong>, 68 commits em cerca de 2 meses.</p>
+      <ul class="tags">
+        <li>React</li><li>TypeScript</li><li>Supabase</li><li>PostgreSQL</li>
+      </ul>
+    </article>
+
+    <article class="svc-card reveal tilt" data-delay="2">
+      <h3>Automação de climatização (IoT)</h3>
+      <p>Ares-condicionados ficavam ligados fora do expediente e parte dos comandos falhava na
+         nuvem do fabricante. Integrei Home Assistant, uma ponte própria e tags NFC, com página de
+         celular para ligar e desligar por setor.
+         <strong>36 dos 43 ares automatizados</strong> em 4 prédios.</p>
+      <ul class="tags">
+        <li>Home Assistant</li><li>Node.js</li><li>Docker</li><li>VPN</li><li>NFC</li>
+      </ul>
+    </article>
+
+    <article class="svc-card reveal tilt" data-delay="3">
+      <h3>Chatbot de agendamento com IA</h3>
+      <p>Reescrevi o prompt do bot de WhatsApp a partir de conversas reais, corrigi as jornadas
+         automáticas e criei travas de segurança. <strong>46 de 108 conversas</strong> resolvidas
+         pelo bot em um mês, com agendamentos conferidos na agenda real.</p>
+      <ul class="tags">
+        <li>LLM</li><li>Prompt engineering</li><li>WhatsApp</li><li>Automação</li>
+      </ul>
+    </article>
+
+    <article class="svc-card reveal tilt" data-delay="4">
+      <h3>Inspeções por QR code</h3>
+      <p>QR codes de parede abrem chamados de limpeza sem login, com avisos automáticos por
+         WhatsApp e indicadores por mediana e p90, que mostram o tempo real de atendimento.
+         <strong>225 QR codes</strong> instalados.</p>
+      <ul class="tags">
+        <li>QR code</li><li>WhatsApp</li><li>Indicadores</li>
+      </ul>
+    </article>
+
+    <article class="svc-card reveal tilt" data-delay="5">
+      <h3>Custo e desempenho do banco</h3>
+      <p>Achei a causa raiz de um consumo excessivo no Realtime do Supabase e a corrigi com uma
+         Edge Function. A regravação caiu de <strong>100% para 2,5%</strong> das linhas, sem erros
+         5xx e sem custo adicional.</p>
+      <ul class="tags">
+        <li>Supabase</li><li>PostgreSQL</li><li>Edge Functions</li>
+      </ul>
+    </article>
+
+    <article class="svc-card reveal tilt" data-delay="6">
+      <h3>Portal Wi-Fi com consentimento LGPD</h3>
+      <p>Consentimento granular, canal de revogação e registro de sessão no portal de Wi-Fi da
+         clínica. A auditoria final encontrou <strong>0 pessoas</strong> com revogação ainda
+         marcadas como consentindo.</p>
+      <ul class="tags">
+        <li>LGPD</li><li>Supabase</li><li>Auditoria</li>
+      </ul>
+    </article>
+
+  </div>
+</section>
+
 <section class="marquee-wrap" aria-hidden="true">
   <div class="marquee">
     <div class="marquee-track">
@@ -569,6 +647,7 @@
     <nav>
       <a href="#atuacao">Atuação</a>
       <a href="#projetos">Projetos</a>
+      <a href="#experiencia">Experiência</a>
       <a href="#metodo">Método</a>
       <a href="#contato">Contato</a>
     </nav>
